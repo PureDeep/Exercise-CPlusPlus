@@ -1,3 +1,0 @@
-E:/C++/ExerciseC++/CLion/cmake-build-debug/CMakeFiles/CLion.dir
-E:/C++/ExerciseC++/CLion/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/C++/ExerciseC++/CLion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
