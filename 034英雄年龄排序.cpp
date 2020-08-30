@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-08-25 18:01:23
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-08-25 18:26:35
+ * @LastEditTime: 2020-08-26 15:41:43
  * @FilePath: \C++\ExerciseC++\034”¢–€ƒÍ¡‰≈≈–Ú.cpp
  */
 #include<iostream>
@@ -29,7 +29,7 @@ void sortHArr(Hero arr[], int len){
 
 void printHArr(Hero arr[], int len){
     for(int i = 0; i < len ; i++){
-        cout << arr[i].name << endl;
+        cout << arr[i].name << "\t" << arr[i].age << "\t" << arr[i].sex << endl;
     }
 }
 
