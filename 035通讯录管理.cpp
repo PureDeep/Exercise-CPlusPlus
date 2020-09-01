@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-08-26 16:45:33
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-08-28 17:14:05
+ * @LastEditTime: 2020-09-01 12:21:25
  * @FilePath: \C++\ExerciseC++\035通讯录管理.cpp
  */
 #include <iostream>
@@ -135,6 +135,126 @@ int isExist(AddressBooks *abs, string name)
     return -1;
 }
 
+void deletePerson(AddressBooks *abs)
+{
+    cout << "请输入您要删除的联系人：" << endl;
+    string name;
+    cin >> name;
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        for (int i = 0; i < abs->m_Size; i++)
+        {
+            abs->personArray[i] = abs->personArray[i + 1];
+        }
+        abs->m_Size--;
+        cout << "删除成功" << endl;
+    }
+    else
+    {
+        cout << "查无此人" << endl;
+    }
+
+    system("pause");
+    system("cls");
+}
+
+void findPerson(AddressBooks *abs)
+{
+    cout << "请输入您要查找的人姓名：" << endl;
+    string name;
+    cin >> name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        cout << "姓名：" << abs->personArray[ret].m_Name << "\t"
+             << "性别：" << (abs->personArray[ret].m_Sex == 1 ? "男" : "女") << "\t";
+        // if (abs->personArray[i].m_Sex == 1)
+        // {
+        //     cout << "男"
+        //          << "\t";
+        // }
+        // else
+        // {
+        //     cout << "女"
+        //          << "\t";
+        // }
+        cout << "年龄：" << abs->personArray[ret].m_Age << "\t"
+             << "手机号：" << abs->personArray[ret].m_Phone << "\t"
+             << "住址：" << abs->personArray[ret].m_Addr << endl;
+    }
+    else
+    {
+        cout << "查无此人" << endl;
+    }
+    system("pause");
+    system("cls");
+}
+
+void modifyPerson(AddressBooks *abs)
+{
+    cout << "请输入要修改信息的人的姓名：" << endl;
+    string name;
+    cin >> name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        string name;
+        cout << "请输入姓名：" << endl;
+        cin >> name;
+        abs->personArray[ret].m_Name = name;
+
+        cout << "请输入性别：" << endl;
+        cout << "1----男" << endl;
+        cout << "2----女" << endl;
+        int sex = 0;
+        while (true)
+        {
+            cin >> sex;
+            if (sex == 1 || sex == 2)
+            {
+                abs->personArray[ret].m_Sex = sex;
+                break;
+            }
+            cout << "输入有误，请重新输入" << endl;
+        }
+
+        cout << "请输入年龄：" << endl;
+        int age = 0;
+        cin >> age;
+        abs->personArray[ret].m_Age = age;
+
+        cout << "请输入手机号：" << endl;
+        string phone;
+        cin >> phone;
+        abs->personArray[ret].m_Phone = phone;
+
+        cout << "请输入住址：" << endl;
+        string address;
+        cin >> address;
+        abs->personArray[ret].m_Addr = address;
+    }
+    else
+    {
+        cout << "查无此人" << endl;
+    }
+
+    system("pause");
+    system("cls");
+}
+
+void cleanPerson(AddressBooks *abs)
+{
+    abs->m_Size = 0;
+
+    cout << "清空完成" << endl;
+
+    system("pause");
+    system("cls");
+}
+
 int main()
 {
     int select = 0;
@@ -160,24 +280,28 @@ int main()
             break;
         case 3:
         {
-            cout << "请输入要删除人的姓名：" << endl;
-            string name;
-            cin >> name;
-            if (isExist(&abs, name) == -1)
-            {
-                cout << "查无此人" << endl;
-            }
-            else
-            {
-                cout << "找到此人" << endl;
-            }
+            // cout << "请输入要删除人的姓名：" << endl;
+            // string name;
+            // cin >> name;
+            // if (isExist(&abs, name) == -1)
+            // {
+            //     cout << "查无此人" << endl;
+            // }
+            // else
+            // {
+            //     cout << "找到此人" << endl;
+            // }
         }
-        break;
+            deletePerson(&abs);
+            break;
         case 4:
+            findPerson(&abs);
             break;
         case 5:
+            modifyPerson(&abs);
             break;
         case 6:
+            cleanPerson(&abs);
             break;
         case 0:
             cout << "----感谢使用----" << endl;
