@@ -2,15 +2,15 @@
  * @Author: PureDeep
  * @Date: 2020-09-03 12:00:54
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-09-03 12:21:29
+ * @LastEditTime: 2020-09-03 16:39:12
  * @FilePath: \ExerciseC++\038Õ»Çø.cpp
  */
 #include <iostream>
 
 using namespace std;
 
-int * func(int b){
-    b = 100;
+int * func(){
+    int b = 100;
     int a = 10;
     return &a;
 }
