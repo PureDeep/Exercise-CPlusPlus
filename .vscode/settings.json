@@ -44,5 +44,5 @@
         "xtr1common": "cpp",
         "xutility": "cpp"
     },
-    "files.encoding": "gbk"
+    "files.encoding": "utf8",
 }
