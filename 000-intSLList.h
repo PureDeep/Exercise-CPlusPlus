@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-10-12 22:00:13
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-10-12 22:10:20
+ * @LastEditTime: 2020-10-18 19:17:50
  * @FilePath: \Exercise-CPlusPlus\000-intSLList.h
  */
 //********intSLList.h********
@@ -18,11 +18,12 @@ public:
     {
         next = 0;
     }
-    IntSLLNode(int el, IntSLLNode *ptr = 0)
-    {
-        info = el;
-        next = ptr;
-    }
+    // IntSLLNode(int el, IntSLLNode *ptr = 0)
+    // {
+    //     info = el;
+    //     next = ptr;
+    // }
+    IntSLLNode(int el, IntSLLNode *ptr = 0) : info(el), next(ptr) {}
     int info;
     IntSLLNode *next;
 };
@@ -44,6 +45,8 @@ public:
     int deleteFromHead();
     int deleteFromTail();
     void deleteNode(int);
+    bool isInList(int el) const;
+    void IntSLList::printAll() const;
 
 private:
     IntSLLNode *head, *tail;

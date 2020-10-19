@@ -2,8 +2,8 @@
  * @Author: PureDeep
  * @Date: 2020-09-12 12:07:28
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-09-12 12:16:54
- * @FilePath: \ExerciseC++\055string.cpp
+ * @LastEditTime: 2020-10-19 10:04:34
+ * @FilePath: \Exercise-CPlusPlus\055string.cpp
  */
 #include <iostream>
 
@@ -31,12 +31,10 @@ int main()
     // }
 
     string line;
-    while(getline(cin, line)){
-        if(!line.empty()){
-            cout << line << endl;
-        }
-    }
+    getline(cin, line);
 
+    int len = line.size();
+    cout << len << endl;
 
     return 0;
 }
