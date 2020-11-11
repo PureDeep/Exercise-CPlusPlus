@@ -15,19 +15,20 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Print to conaole":{
-        "prefix": "C++",
-        "body": [
-            "#include <iostream>",
-            "",
-            "using namespace std;",
-            "",
-            "int main()",
-            "{",
-            "    $0",
-            "    return 0;",
-            "}",
-        ],
-        "description": "A cpp file template."
-    }
+	"Print to conaole": {
+		"prefix": "C++",
+		"body": [
+			"#pragma GCC diagnostic error \"-std=c++11\"",
+			"#include <iostream>",
+			"",
+			"using namespace std;",
+			"",
+			"int main()",
+			"{",
+			"    $0",
+			"    return 0;",
+			"}",
+		],
+		"description": "A cpp file template."
+	}
 }
