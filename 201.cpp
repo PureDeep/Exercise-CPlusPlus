@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-11-25 12:45:19
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-11-25 13:02:54
+ * @LastEditTime: 2020-11-25 19:03:59
  * @FilePath: \Exercise-CPlusPlus\201.cpp
  */
 #pragma GCC diagnostic error "-std=c++11"
@@ -17,21 +17,20 @@ class Sample
 
 public:
     Sample(T i) { n = i; }
-    T &operator++();
+    void operator++();
     void disp() { cout << "n = " << n << endl; }
 };
 
 template <class T>
-T &Sample<T>::operator++()
+void Sample<T>::operator++()
 {
     n += 1;
-    return *this;
 }
 
 int main(int argc, char *argv[])
 {
     Sample<char> s('a');
-    ++s.disp();
+    s++;
     s.disp();
     return 0;
 }
