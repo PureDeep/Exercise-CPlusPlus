@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-12-13 20:56:10
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-12-14 14:46:27
+ * @LastEditTime: 2020-12-14 20:57:44
  * @FilePath: \Exercise-CPlusPlus\241Bag-Dp.cpp
  */
 #pragma GCC diagnostic error "-std=c++11"
@@ -42,10 +42,22 @@ vector<vector<int>> getAnswer(vector<item> items, int bagSize)
     return dp;
 }
 
+void printDP(vector<vector<int>> dp)
+{
+    for (int i = 0; i < dp.size(); i++)
+    {
+        for (int j = 0; j < dp[i].size(); j++)
+        {
+            cout << dp[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
 int main(int argc, char *argv[])
 {
     //
-    char N[] = {'a', 'b', 'c', 'd', 'e', 'f'};
+    char N[] = {'a', 'b', 'c', 'd', 'e'};
     int W[] = {2, 2, 6, 5, 4};
     int V[] = {6, 3, 5, 4, 6};
     int bagSize = 10;
@@ -57,7 +69,9 @@ int main(int argc, char *argv[])
     }
     //
     vector<vector<int>> ansVec = getAnswer(itemVec, bagSize);
+    printDP(ansVec);
     int ans = ansVec[itemVec.size()][bagSize];
-    cout << ans << endl;
+    cout << endl
+         << ans << endl;
     return 0;
 }

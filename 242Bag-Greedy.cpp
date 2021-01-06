@@ -2,7 +2,7 @@
  * @Author: PureDeep
  * @Date: 2020-12-14 14:35:38
  * @LastEditors: PureDeep
- * @LastEditTime: 2020-12-14 15:10:54
+ * @LastEditTime: 2020-12-14 20:23:36
  * @FilePath: \Exercise-CPlusPlus\242Bag-Greedy.cpp
  */
 #pragma GCC diagnostic error "-std=c++11"
@@ -68,7 +68,9 @@ int main(int argc, char *argv[])
     for (int i = 0; i < ansVec.size(); i++)
     {
         ans += ansVec[i].v;
+        cout << ansVec[i].n << "\t";
     }
-    cout << ans << endl;
+    cout << endl
+         << ans << endl;
     return 0;
 }
